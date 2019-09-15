@@ -1,0 +1,1 @@
+INSERT INTO example.company(id, name) VALUES(1, "company");
