@@ -8,10 +8,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -34,7 +30,7 @@ public class Konitiha implements Serializable {
 	@Column(nullable=false)
 	private Integer t2;
 	
-	@ManyToMany(cascade=ALL)		// FetchType.LAZY <- 遅延ロード
+	@ManyToMany(cascade=ALL)
 	private List<Ohayo> ohayos;
 
 	public KonitihaKey getKonitihaKey() {

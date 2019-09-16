@@ -7,10 +7,6 @@ import java.util.List;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -31,11 +27,7 @@ public class Ohayo implements Serializable {
 
 	private Integer o5;
 
-	@ManyToMany(mappedBy="ohayos", cascade = ALL)		// FetchType.LAZY <- 遅延ロード
-	@JoinTable(
-			name = "konitiha",
-			joinColumns= {@JoinColumn(name="i1", referencedColumnName="ohayoKey.i1")}
-		)
+	@ManyToMany(mappedBy="ohayos", cascade = ALL)
 	private List<Konitiha> konitihas;
 
 	public OhayoKey getOhayoKey() {
